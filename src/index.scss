@@ -1,0 +1,30 @@
+/* src/index.scss */
+/* 全局样式与打印导入 */
+@import './styles/_variables.scss';
+@import './styles/_mixins.scss';
+@import './styles/App.scss';
+@import './styles/print.scss';
+
+/* base reset */
+* {
+    box-sizing: border-box;
+}
+
+/* 统一 box-sizing */
+html,
+body,
+#root {
+    height: 100%;
+}
+
+
+body {
+    margin: 0;
+    /* 去除默认外边距 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: $bg;
+    /* 使用变量 */
+    color: $text;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

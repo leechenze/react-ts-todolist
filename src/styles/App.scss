@@ -1,0 +1,208 @@
+/* App.scss */
+@import './_variables.scss';
+@import './_mixins.scss';
+
+
+/* 应用容器 */
+.app {
+    max-width: $max-width;
+    margin: 24px auto;
+    padding: 16px;
+}
+
+/* 头部 */
+.app-header {
+    @include card;
+    margin-bottom: 16px;
+
+    h1 {
+        margin: 0 0 8px 0;
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        margin: 0;
+        color: $muted;
+    }
+}
+
+/* 主体布局: 两栏响应式 */
+.app-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+
+    /* 间隙 */
+    @media (max-width: 800px) {
+        grid-template-columns: 1fr;
+    }
+
+    .left {
+        @include card;
+    }
+
+    .right {
+        @include card;
+    }
+}
+
+/* 表单样式 */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .field {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        input,
+        textarea {
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            font-size: 0.95rem;
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+                border-color: $primary;
+            }
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+    }
+
+    .error {
+        color: $danger;
+        font-size: 0.9rem;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 4px;
+
+        .btn-primary {
+            background: $primary;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+
+            &:hover {
+                filter: brightness(0.95);
+            }
+        }
+    }
+}
+
+/* 过滤栏 */
+.filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+
+    button {
+        padding: 6px 10px;
+        border-radius: 8px;
+        border: 1px solid #e5e7eb;
+        background: transparent;
+        cursor: pointer;
+
+        &.active {
+            background: $primary;
+            color: white;
+            border-color: $primary;
+        }
+    }
+}
+
+/* 列表 */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .task-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #eef2ff;
+
+        &.done {
+            opacity: 0.65;
+            text-decoration: line-through;
+        }
+
+        .toggle {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .content {
+            flex: 1;
+
+            .title {
+                font-weight: 600;
+            }
+
+            .desc {
+                color: $muted;
+                margin-top: 4px;
+            }
+
+            .meta {
+                color: $muted;
+                font-size: 0.85rem;
+                margin-top: 6px;
+            }
+        }
+
+        .remove {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: $danger;
+        }
+    }
+}
+
+/* 空状态 */
+.empty {
+    text-align: center;
+    color: $muted;
+    padding: 24px;
+}
+
+/* 页脚 */
+.app-footer {
+    text-align: center;
+    margin-top: 12px;
+    color: $muted;
+}
+
+/* 小屏微调 */
+@media (max-width: 480px) {
+    .task-form .actions {
+        justify-content: center;
+    }
+}

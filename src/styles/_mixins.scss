@@ -1,0 +1,7 @@
+/* 常用 mixins */
+@mixin card {
+    background: $panel;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(16, 24, 40, 0.06);
+    padding: 16px;
+}

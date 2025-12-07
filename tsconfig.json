@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "ESNext",
+        "jsx": "react-jsx",
+        "strict": true,
+        "moduleResolution": "bundler",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "baseUrl": "src",
+        "paths": {
+            "components/*": [
+                "components/*"
+            ],
+            "hooks/*": [
+                "hooks/*"
+            ]
+        },
+        "types": [
+            "node"
+        ],
+        "ignoreDeprecations": "6.0"
+    },
+    "include": [
+        "src"
+    ]
+}

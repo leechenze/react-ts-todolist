@@ -1,0 +1,28 @@
+/* 打印样式 */
+@media print {
+    body {
+        background: white !important;
+        /* 打印背景白色 */
+        color: black !important;
+    }
+
+    .app {
+        box-shadow: none !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0.5in !important;
+    }
+
+    .task-form,
+    .filter-bar {
+        page-break-inside: avoid;
+    }
+
+    /* 避免分页中断表单 */
+    .remove,
+    .toggle {
+        display: none !important;
+    }
+
+    /* 打印时隐藏操作按钮 */
+}
